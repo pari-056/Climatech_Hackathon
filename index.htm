@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimize and Build: Advanced Material Estimation for Sustainable Structures</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+    /* Universal styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Body */
+    body {
+        font-family: 'Open Sans', sans-serif;
+        background-color: #f7f1e3; /* Light beige background */
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-size: cover;
+        animation: backgroundFade 8s infinite alternate ease-in-out;
+    }
+
+    /* Animated background */
+    @keyframes backgroundFade {
+        0% { background-color: #f7f1e3; }
+        100% { background-color: #faf3e3; }
+    }
+
+    /* Container for content */
+    .container {
+        width: 90%;
+        max-width: 900px;
+        padding: 30px;
+        background-color: #fdf8e4; /* Lighter beige for the content */
+        border-radius: 15px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        color: #5a4a3f;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: scale(0.9); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .container:hover {
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2); /* Adds depth on hover */
+        transform: translateY(-5px);
+    }
+
+    /* Heading */
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-family: 'Open Sans', sans-serif;
+        color: #5a4a3f; /* Dark brown for headings */
+        font-weight: 600;
+        font-size: 2.8em;
+        letter-spacing: 1px;
+    }
+
+    p {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #5a4a3f;
+        font-size: 1.2em;
+        line-height: 1.6em;
+    }
+
+    /* Form fields and labels */
+    .form-group {
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    label {
+        display: block;
+        font-weight: 600;
+        font-size: 1.2em;
+        margin-bottom: 8px;
+        color: #5a4a3f;
+    }
+
+    /* Add icons to input fields */
+    .form-group input {
+        padding-left: 45px;
+    }
+
+    .form-group i {
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        font-size: 1.2em;
+        color: #d1a77d;
+    }
+
+    input {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #cfc3a0; /* Beige border */
+        border-radius: 8px;
+        background-color: #faf3e3; /* Light beige input background */
+        font-size: 1.1em;
+        transition: border-color 0.3s ease;
+        outline: none;
+    }
+
+    input:focus {
+        border-color: #d1a77d; /* Focus effect with golden-beige color */
+        outline: none;
+    }
+
+    /* Button styling */
+    button {
+        width: 100%;
+        padding: 15px;
+        background: linear-gradient(135deg, #91693e, #a67c52); /* Gradient for buttons */
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.3em;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 5px 15px rgba(166, 124, 82, 0.3);
+    }
+
+    button:hover {
+        background-color: #91693e; /* Darker beige on hover */
+        transform: translateY(-3px); /* Adds subtle depth */
+    }
+
+    /* Result section with modern card style */
+    .result {
+        margin-top: 30px;
+        padding: 20px;
+        background-color: #faf3e3;
+        border-radius: 12px;
+        text-align: center;
+        color: #5a4a3f;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        opacity: 0;
+        transform: scale(0.9);
+        animation: fadeInResult 1s forwards;
+    }
+
+    @keyframes fadeInResult {
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .result h2 {
+        margin-top: 0;
+        font-size: 1.8em;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 600;
+        color: #a67c52; /* Muted gold for headings */
+    }
+
+    .result p {
+        color: #5a4a3f;
+        font-size: 1.2em;
+    }
+
+    /* Collapsible sections */
+    .collapsible {
+        background-color: #a67c52;
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        width: 100%;
+        border: none;
+        text-align: center;
+        outline: none;
+        font-size: 1.1em;
+        font-family: 'Open Sans', sans-serif;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        box-shadow: 0 5px 15px rgba(166, 124, 82, 0.3);
+    }
+
+    .collapsible:hover {
+        background-color: #91693e; /* Darker beige on hover */
+    }
+
+    .content {
+        padding: 0 18px;
+        display: none;
+        overflow: hidden;
+        background-color: #fdf8e4;
+        border-radius: 6px;
+        color: #5a4a3f;
+        margin-top: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .content p {
+        text-align: justify;
+        padding: 15px;
+        font-size: 1.1em;
+        color: #5a4a3f;
+        background-color: #faf3e3;
+        border-left: 4px solid #a67c52; /* Muted gold border */
+    }
+
+    /* Media query for responsiveness */
+    @media (max-width: 768px) {
+        .container {
+            width: 95%;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        button, .collapsible {
+            font-size: 1em;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Optimize and Build: Advanced Material Estimation for Sustainable Structures</h1>
+        <p>Input your project specifications to determine the necessary material quantities.</p>
+
+        <!-- Form for inputting project details -->
+        <form id="materialForm">
+            <div class="form-group">
+                <label for="projectName">Project Name:</label>
+                <i class="fas fa-building"></i>
+                <input type="text" id="projectName" name="projectName" placeholder="Enter project name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="squareArea">Square Area (in sq meters):</label>
+                <i class="fas fa-ruler-combined"></i>
+                <input type="number" id="squareArea" name="squareArea" placeholder="Enter square area" required>
+            </div>
+
+            <button type="button" onclick="calculateMaterials()">Calculate Materials</button>
+        </form>
+
+        <!-- Displaying the calculated material requirements -->
+        <div id="result" class="result" style="display:none;">
+            <h2>Required Materials for <span id="projectOutput"></span></h2>
+            <p><strong>Wood:</strong> <span id="woodOutput"></span> tons</p>
+            <p><strong>Concrete:</strong> <span id="concreteOutput"></span> tons</p>
+            <p><strong>Steel:</strong> <span id="steelOutput"></span> tons</p>
+
+            <!-- Collapsible eco-friendly suggestions -->
+            <h2>How to Effectively Use Excess Material?</h2>
+            <button class="collapsible">Excess Wood</button>
+            <div class="content">
+                <p>
+                    Excess wood from construction projects can be repurposed or recycled. It can be used to create furniture, or wooden pallets, or converted into biomass energy. Avoid sending it to landfills by donating it to community projects or recycling it.
+                </p>
+            </div>
+
+            <button class="collapsible">Excess Concrete</button>
+            <div class="content">
+                <p>
+                    Excess concrete can be recycled by crushing it into aggregate, which can be used for new concrete or as a base material for roads. Alternatively, it can be used for landscaping or DIY projects.
+                </p>
+            </div>
+
+            <button class="collapsible">Excess Steel</button>
+            <div class="content">
+                <p>
+                    Steel is highly recyclable. It can be melted down and reformed into new products with minimal energy compared to producing new steel. It can also be donated or reused for on-site constructions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateMaterials() {
+            const projectName = document.getElementById('projectName').value;
+            const squareArea = parseFloat(document.getElementById('squareArea').value);
+
+            const woodPerSquareMeter = 0.05;
+            const concretePerSquareMeter = 0.1;
+            const steelPerSquareMeter = 0.03;
+
+            const requiredWood = (squareArea * woodPerSquareMeter).toFixed(2);
+            const requiredConcrete = (squareArea * concretePerSquareMeter).toFixed(2);
+            const requiredSteel = (squareArea * steelPerSquareMeter).toFixed(2);
+
+            document.getElementById('projectOutput').innerText = projectName;
+            document.getElementById('woodOutput').innerText = requiredWood;
+            document.getElementById('concreteOutput').innerText = requiredConcrete;
+            document.getElementById('steelOutput').innerText = requiredSteel;
+
+            document.getElementById('result').style.display = 'block';
+        }
+
+        var coll = document.getElementsByClassName("collapsible");
+        for (var i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
+    <!-- Add FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</body>
+</html>
